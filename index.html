@@ -37,6 +37,7 @@
 	<div class="container">
 		<div ng-view></div>
 		<br /><br />
+<!--
 		<div id="mobileinstall" class="panel panel-default visible-sm-* visible-xs-* hidden-md hidden-lg">
 			<div class="panel-heading" role="tab" id="headingTwo">
 				<h4 class="panel-title">
@@ -56,10 +57,8 @@
 					<p class="arrow">↓</p>
 				</div>
 			</div>
+-->
 		</div>
-	</div>
-	<div id="credit">
-		<p class="text-muted">v<span app-version></span></p>
 	</div>
 <!--
 	<footer class="footer">
@@ -86,7 +85,7 @@
 	<script src="app/components/models.js"></script>
 	<script src="app/components/loginMcFly.js"></script>
 <!-- CONTROLLERS -->
-	<script src="app/home/home.js?v=5.a"></script>
+	<script src="app/home/home.js?v=5.b"></script>
 	<script src="app/account/account.js?v=1.b"></script>
 	<script src="app/vendors/vendors.js"></script>
 	<script src="app/coupons/coupons.js"></script>
@@ -103,11 +102,13 @@
 		})(document, window);
 	</script>
 	<script>
+/*
 		if ( ("standalone" in window.navigator) && !window.navigator.standalone ){
 			//	nothing...
 		}else{
 			$("#mobileinstall").hide();
 		}
+*/
 		function updateSite(event) {
 			window.location.reload(true);
 		}
