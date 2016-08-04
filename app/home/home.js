@@ -14,7 +14,7 @@ angular.module('MainCtrl', ['ngRoute'])
 	$scope.vendor = vendor;
 }).config(['$routeProvider','$locationProvider', function ($routeProvider,$locationProvider) {
 	$routeProvider.when('/', {
-		templateUrl: 'app/home/home.html?v=2.ga',
+		templateUrl: 'app/home/home.html?v=3.a',
 		controller: 'MainController',
 		resolve:{
 			login:function( Login ){
