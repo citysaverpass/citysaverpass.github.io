@@ -2,6 +2,9 @@ angular.module('MainCtrl', ['ngRoute'])
 .controller('MainController', function($scope,$timeout,$location, Login, me) {
 	$scope.tagline = 'To the moon and back!';	
 	$scope.me = me;
+	$scope.goToUrl = function( url ){
+		self.location.href = url;
+	}
 	$scope.goToPage = function( page ){
 		$location.path(page);
 	}
