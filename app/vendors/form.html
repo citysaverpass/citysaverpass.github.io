@@ -1,0 +1,42 @@
+<div>
+	<div class="pull-right">
+		<a ng-href="#/vendors" class="btn btn-default"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+		<a ng-href="#/" class="btn btn-primary"><i class="fa fa-home" aria-hidden="true"></i></a>
+	</div>
+
+	<h3>Edit</h3>
+	<div class="alert alert-success" role="alert" ng-show="notifyme">
+		<p>{{notifyme}}</p>
+	</div>
+	<form name="form">
+		<div class="form-group">
+			<label>Name</label>
+			<input type="text" ng-model="vendor.name" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>City</label>
+			<input type="text" ng-model="vendor.tag" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Address</label>
+			<input type="text" ng-model="vendor.address" class="form-control">
+		</div>
+		<div class="form-group" ng-hide="true">
+			<label>Vendor</label>
+			<input type="text" ng-model="vendor.vendor" class="form-control">
+		</div>
+		<div class="form-group" ng-hide="true">
+			<label>Site</label>
+			<input type="url" ng-model="vendor.site" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Description</label>
+			<textarea class="form-control" rows=3 style="width:100%" ng-model="vendor.description" >{{vendor.description}}</textarea>
+		</div>
+		<div class="well">
+			<a class="btn btn-warning" ng-href="#/vendors">Go Back</a>
+			<a class="btn btn-primary" ng-click="save()" ng-disabled="!hasChanges()||form.$invalid">Save</a>
+			<a class="btn btn-danger" ng-click="remove()" ng-disabled="!vendor.$id()">Remove</a>
+		</div>
+	</form>
+</div>

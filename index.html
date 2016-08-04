@@ -1,8 +1,135 @@
-<html>
+<!doctype html>
+<html lang="en" class="full" ng-app="myApp">
 <head>
-<title>City</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>City Saver Pass - Okanagan</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+-->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+	<base ng-href="/">
+	
+	<!-- CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	<!-- custom styles -->
+	<link rel="stylesheet" ng-href="app/assets/css/app.css?v=2.c">
+
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+	<script src="app/bower_components/angular-route/angular-route.js"></script>
+	<script src="app/components/forge.min.js"></script>
+	<link rel="apple-touch-icon" sizes="180x180" href="app/assets/img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="app/assets/img/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="app/assets/img/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="app/assets/img/manifest.json">
+	<link rel="mask-icon" href="app/assets/img/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
 </head>
-<body>
-<h1>City Saver Pass</h1>
+<body ng-cloak>
+	<div class="container">
+		<div ng-view></div>
+		<br /><br />
+		<div id="mobileinstall" class="panel panel-default visible-sm-* visible-xs-* hidden-md hidden-lg">
+			<div class="panel-heading" role="tab" id="headingTwo">
+				<h4 class="panel-title">
+					<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Download the City Saver Pass mobile app for free.</a>
+				</h4>
+			</div>
+			<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+				<div class="panel-body">
+					<p>
+					Simply tap the <img class="share" src="app/assets/img/iphone_share.png" /> button below, and choose "Add to Home Screen".
+					</p>
+					
+					<p>
+					The mobile app will then be installed as an icon on your home screen.
+					</p>
+					
+					<p class="arrow">↓</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="credit">
+		<p class="text-muted">v<span app-version></span></p>
+	</div>
+<!--
+	<footer class="footer">
+	</footer>
+-->
+<!--
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted">v<span app-version></span></p>
+		</div>
+	</footer>
+-->
+	<!-- JS -->
+	<script src="app/bower_components/flybase/flybase.js"></script>
+	<script src="app/bower_components/angularfly/angularfly.js?v=1.0.4"></script>
+<!--
+	<script src="https://cdn.flybase.io/flybaseauth.min.js"></script>
+-->
+	
+	<!-- ANGULAR STUFF -->
+	<script src="app/config.js?v=1.4"></script>
+<!-- SERVICES -->
+	<script src="app/components/directives.js"></script>
+	<script src="app/components/models.js"></script>
+	<script src="app/components/loginMcFly.js"></script>
+<!-- CONTROLLERS -->
+	<script src="app/home/home.js?v=4.c"></script>
+	<script src="app/account/account.js?v=1.b"></script>
+	<script src="app/vendors/vendors.js"></script>
+	<script src="app/coupons/coupons.js"></script>
+	<script src="app/control/control.js?v=1.a"></script>	
+	<script src="app/app.js"></script>
+	<script src="app/components/FastActive.min.js"></script>
+	<script>
+		(function(d,w){
+			if ((('ontouchstart' in w) || w.DocumentTouch && d instanceof DocumentTouch)) {
+				d.documentElement.className += ' touch';
+			} else {
+				d.documentElement.className += ' no-touch';
+			}
+		})(document, window);
+	</script>
+	<script>
+		if ( ("standalone" in window.navigator) && !window.navigator.standalone ){
+			//	nothing...
+		}else{
+			$("#mobileinstall").hide();
+		}
+		function updateSite(event) {
+			window.location.reload(true);
+		}
+//		window.applicationCache.addEventListener('updateready', updateSite, false);
+		var appCache = window.applicationCache;
+		appCache.update(); // Attempt to update the user's cache.
+		if (appCache.status == window.applicationCache.UPDATEREADY) {
+			appCache.swapCache();  // The fetch was successful, swap in the new cache.
+		}
+
+		window.addEventListener('load', function(e) {
+			window.applicationCache.addEventListener('updateready', function(e) {
+				if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+					// Browser downloaded a new app cache.
+					if (confirm('A new version of this app is available. Update it?')) {
+						window.location.reload(true);
+					}
+				} else {
+					// Manifest didn't changed. Nothing new to server.
+				}
+			}, false);
+		}, false);
+	</script>
 </body>
 </html>

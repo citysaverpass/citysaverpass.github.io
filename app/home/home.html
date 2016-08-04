@@ -1,0 +1,106 @@
+<div class="row" ng-hide-auth> <!-- style="background: url('app/assets/img/vineyard.jpg') no-repeat center center fixed;" -->
+	<div class="col-sm-12 col-md-10 col-md-offset-1">
+		<div class="Absolute-Center is-Responsive">
+			<br />
+			<img src="app/assets/img/logo.png" class="img-responsive" style="text-align: center;margin: auto;" />
+			<br />
+		</div>
+	</div>
+</div>
+<br />
+<div class="row" ng-hide-auth>
+	<div class="col-sm-12 col-md-10 col-md-offset-1">
+		<div class="Absolute-Center is-Responsive">
+			<ul class="list-group" style="text-align:left">
+				<li class="list-group-item" style="background: transparent;border:0px;">
+					<button type="button" class="btn btn-lg btn-default btn-block" ng-click="goToPage('/login')">
+						<i title="About" class="fa fa-fw fa-lock" aria-hidden="true"></i> Login
+					</button>
+				</li>
+				<li class="list-group-item" style="background: transparent;border:0px;">
+					<button type="button" class="btn btn-lg btn-block btn-success">
+						<i title="Buy" class="fa fa-fw fa-shopping-cart" aria-hidden="true"></i> Join as a member
+					</button>
+				</li>
+				<li class="list-group-item" style="background: transparent;border:0px;">
+					<button type="button" class="btn btn-lg btn-block btn-success">
+						<i title="Buy" class="fa fa-fw fa-shopping-cart" aria-hidden="true"></i> Join as a business
+					</button>
+				</li>
+				<li class="list-group-item" style="background: transparent;border:0px;">
+					<button type="button" class="btn btn-lg btn-block btn-default">
+						<i title="About" class="fa fa-fw fa-question" aria-hidden="true"></i> About
+					</button>
+				</li>
+<!--
+				<li class="list-group-item" style="background: transparent;border:0px;">
+					<button type="button" class="btn btn-lg btn-block btn-success">
+						<i title="Buy" class="fa fa-fw fa-usd" aria-hidden="true"></i>
+					</button>
+				</li>
+				<li class="list-group-item" style="background: transparent;border:0px;">
+					<button type="button" class="btn btn-lg btn-block btn-success">
+						<i title="Buy" class="fa fa-fw fa-mobile" aria-hidden="true"></i>
+					</button>
+				</li>
+				<li class="list-group-item" style="background: transparent;border:0px;">
+					<button type="button" class="btn btn-lg btn-block btn-success">
+						<i title="Buy" class="fa fa-fw fa-reply" aria-hidden="true"></i>
+					</button>
+				</li>
+-->
+			</ul>
+		</div>
+	</div>
+</div>
+<br />
+<div class="row" ng-hide-auth>
+	<div class="col-sm-12 col-md-10 col-md-offset-1">
+		<div class="Absolute-Center is-Responsive">
+			<button type="button" class="btn btn-default btn-circle btn-lg">
+				<i title="About" class="fa fa-fw fa-facebook" aria-hidden="true"></i>
+			</button>
+			<button type="button" class="btn btn-default btn-circle btn-lg">
+				<i title="Buy" class="fa fa-fw fa-twitter" aria-hidden="true"></i>
+			</button>
+			<button type="button" class="btn btn-default btn-circle btn-lg">
+				<i title="Buy" class="fa fa-fw fa-instagram" aria-hidden="true"></i>
+			</button>
+		</div>
+	</div>
+</div>
+<div class="row" ng-show-auth>
+	<div class="col-sm-12 col-md-10 col-md-offset-1">
+		<div class="Absolute-Center is-Responsive">
+			<ul class="list-group" style="text-align:left">
+				<li class="list-group-item" style="background: transparent;border:0px;">
+					<button ng-show="!me.isAdmin" type="button" class="btn btn-lg btn-default btn-block">
+						<i title="About" class="fa fa-fw fa-search" aria-hidden="true"></i> Find Deals
+					</button>
+				</li>
+				<li class="list-group-item" style="background: transparent;border:0px;">
+					<button ng-show="!me.isAdmin" type="button" class="btn btn-lg btn-default btn-block">
+						<i title="About" class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Deals Near Me
+					</button>
+				</li>
+				<li class="list-group-item" style="background: transparent;border:0px;">
+					<button ng-show="!me.isAdmin" type="button" class="btn btn-lg btn-default btn-block">
+						<i title="About" class="fa fa-fw fa-ticket" aria-hidden="true"></i> Local Vendors
+					</button>
+				</li>
+				<li ng-show="me.isAdmin" class="list-group-item" style="background: transparent;border:0px;">
+					<button ng-click="goToPage('/vendors')" type="button" class="btn btn-lg btn-default btn-block">Manage Vendors</button>
+				</li>
+				<li ng-show="me.isAdmin" class="list-group-item" style="background: transparent;border:0px;">
+					<button ng-click="goToPage('/coupons')" type="button" class="btn btn-lg btn-default btn-block">Manage Coupons</button>
+				</li>
+				<li class="list-group-item" style="background: transparent;border:0px;">
+					<buttontype="button" class="btn btn-lg btn-default btn-block" ng-click="goToPage('/logout')">
+						<i title="About" class="fa fa-fw fa-unlock" aria-hidden="true"></i> Logout
+					</button>
+				</li>
+			</ul>
+<!-- admin only pages -->
+		</div>
+	</div>
+</div>

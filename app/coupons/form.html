@@ -1,0 +1,38 @@
+<div>
+	<div class="pull-right">
+		<a ng-href="#/coupons" class="btn btn-default"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+		<a ng-href="#/" class="btn btn-primary"><i class="fa fa-home" aria-hidden="true"></i></a>
+	</div>
+
+	<h3>Edit</h3>
+	<div class="alert alert-success" role="alert" ng-show="notifyme">
+		<p>{{notifyme}}</p>
+	</div>
+	<form name="form">
+		<div class="form-group">
+			<label>Task</label>
+			<input type="text" ng-model="coupon.name" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Tag</label>
+			<input type="text" ng-model="coupon.tag" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Vendor</label>
+			<input type="text" ng-model="coupon.vendor" class="form-control">
+		</div>
+		<div class="form-group" ng-hide="true">
+			<label>Site</label>
+			<input type="url" ng-model="coupon.site" class="form-control">
+		</div>
+		<div class="form-group">
+			<label>Description</label>
+			<textarea class="form-control" rows=3 style="width:100%" ng-model="coupon.description" >{{coupon.description}}</textarea>
+		</div>
+		<div class="well">
+			<a class="btn btn-warning" ng-href="#/coupons">Go Back</a>
+			<a class="btn btn-primary" ng-click="save()" ng-disabled="!hasChanges()||form.$invalid">Save</a>
+			<a class="btn btn-danger" ng-click="remove()" ng-disabled="!coupon.$id()">Remove</a>
+		</div>
+	</form>
+</div>

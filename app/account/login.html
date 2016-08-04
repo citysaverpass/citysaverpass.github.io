@@ -1,0 +1,30 @@
+<div>
+	<div class="pull-right">
+		<a ng-href="#/" class="btn btn-primary"><i class="fa fa-home" aria-hidden="true"></i></a>
+	</div>
+	<h2 ng-show ng-hide="createMode">Login</h2>
+	<h2 ng-cloak ng-show="createMode">Register</h2>
+	<form>
+		<div class="form-group input-group">
+			<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+			<input class="form-control" type="email" name='email' placeholder="email" ng-model="email" />
+		</div>
+		<div class="form-group input-group">
+			<span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+			<input class="form-control" type="password" name='password' placeholder="password" ng-model="pass"/>     
+		</div>
+		<div class="form-group input-group" ng-cloak ng-show="createMode">
+			<span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+			<input class="form-control" type="password" name='password' placeholder="confirm password" ng-model="confirm"/>     
+		</div>
+		<div class="form-group">
+			<button type="button" class="btn btn-success btn-block" ng-click="login(email, pass)" ng-hide="createMode">Login</button>
+		</div>
+<!--
+		<button ng-click="createMode = true" ng-hide="createMode">Register</button>
+		<button ng-cloak ng-show="createMode" ng-click="createAccount()">Create Account</button>
+-->
+		<button ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button>
+		<p ng-show="err" class="error">{{err}}</p>
+	</form>
+</div>

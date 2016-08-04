@@ -1,0 +1,20 @@
+{
+  "name": "fit-stack",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-loader": "latest",
+    "flybase": "~1.4.1",
+    "angularfly": "latest",
+    "angular-add-to-home-screen": "^0.3.0",
+    "angular-google-maps": "~2.3.3",
+    "lodash": "~4.14.1",
+    "angular-simple-logger": "~0.1.7",
+    "ngmap": "~1.17.3"
+  },
+  "resolutions": {
+    "angular": "1.4.4"
+  }
+}
